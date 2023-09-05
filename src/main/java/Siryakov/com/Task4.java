@@ -16,9 +16,10 @@ public class Task4 { //Проверка на палиндром
 
     }
     public static boolean CheckingForPalindrome(String SuspectedPalindrome) {
-        int length = SuspectedPalindrome.length();
+        String cleanedString = SuspectedPalindrome.toLowerCase().replaceAll("\\s+", "");
+        int length = cleanedString.length();
         for (int i = 0; i < length / 2; ++i) {
-            if (SuspectedPalindrome.charAt(i) != SuspectedPalindrome.charAt(length - i - 1)) {
+            if (cleanedString.charAt(i) != cleanedString.charAt(length - i - 1)) {
                 return false;
             }
         }
